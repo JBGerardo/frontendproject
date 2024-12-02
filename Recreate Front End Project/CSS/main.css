@@ -1,0 +1,261 @@
+/* Universal Reset */
+* {
+    box-sizing: border-box; /* Includes padding and border in width and height calculation */
+    margin: 0; /* Resets default margin */
+    padding: 0; /* Resets default padding */
+}
+
+/* Basic Styling */
+body, html {
+    width: 100%; /* Ensures full width of the viewport */
+    height: 100%; /* Ensures full height of the viewport */
+    font-family: Arial, sans-serif; /* Sets a clean and modern sans-serif font */
+    background-color: #212a31; /* Sets background color to black for dark theme */
+    color: #D3D9D4; /* Sets text color to white for contrast */
+    display: flex; /* Uses flexbox for central alignment */
+    justify-content: center; /* Horizontally centers content */
+    align-items: center; /* Vertically centers content */
+}
+
+/* Content and Layout */
+.content {
+    display: flex; /* Flexbox layout for child elements */
+    align-items: center; /* Vertically aligns content */
+    justify-content: center; /* Horizontally centers content */
+    gap: 40px; /* Adds 40px spacing between elements */
+}
+
+/* Highlighted Text */
+.highlight {
+    color: #66FCF1; /* Sets text color to cyan for emphasis */
+}
+/* Hero Image Styling */
+.hero-image {
+    width: 400px; /* Fixes the image width to 400px */
+    height: auto; /* Maintains the image's aspect ratio */
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 4em; /* Sets a large font size for main headings */
+    font-weight: bold; /* Makes the text bold */
+    margin-bottom: 0.2em; /* Adds spacing below the heading */
+    color: white; /* Sets heading color to white */
+}
+
+h2 {
+    font-size: 2.5em; /* Sets a smaller font size for subheadings */
+    font-weight: lighter; /* Uses lighter font weight for contrast */
+    color: #cccccc; /* Sets text color to light gray */
+    margin-bottom: 1em; /* Adds spacing below the subheading */
+}
+
+/* Navigation Styling */
+.navigation ul {
+    list-style: none; /* Removes bullet points from the list */
+    margin-top: 5px; /* Adds a small margin above the list */
+    padding: 0; /* Removes default padding */
+    display: inline-flex; /* Displays list items in a single row */
+    gap: 2em; /* Adds 2em spacing between list items */
+}
+
+.navigation ul li {
+    position: relative; /* Prepares for potential dropdown menus */
+}
+
+/* Active and Hover Link Styling */
+.container nav a.active,
+.container nav a:hover {
+    color:cyan; /* Highlights active and hovered links with cyan */
+    cursor: pointer; /* Changes cursor to indicate interactivity */
+}
+
+.container nav a.active {
+    font-weight: bold; /* Emphasizes the active link with bold text */
+    cursor: default; /* Changes cursor to default for non-clickable state */
+    pointer-events: none; /* Disables interaction with the active link */
+}
+
+/* Navigation Link Styling */
+.navigation ul li a {
+    text-decoration: none; /* Removes underline from links */
+    color: #cccccc; /* Sets default text color to light gray */
+    font-size: 1.5em; /* Sets font size for navigation links */
+    position: relative; /* Prepares for potential pseudo-element styling */
+    transition: color 0.3s ease; /* Smooth transition effect for color changes */
+}
+
+/* Hover Effect for Navigation Links */
+.navigation ul li a:hover {
+    color: CYAN; /* Changes link color to cyan when hovered */
+}
+
+/* Dropdown Styling */
+.dropdown .dropdown-menu {
+    display: none; /* Hides the dropdown menu by default */
+    position: absolute; /* Positions the dropdown relative to its parent */
+    top: 100%; /* Places the dropdown directly below the parent link */
+    left: 0; /* Aligns dropdown to the left of the parent */
+    background-color:  #212a31; /* Sets a dark background color */
+    min-width: 400px; /* Ensures dropdown has a minimum width */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds shadow for a layered effect */
+    z-index: 1; /* Ensures the dropdown appears above other elements */
+}
+
+.dropdown .dropdown-menu a {
+    color: white; /* Sets text color to white for visibility */
+    padding: 12px 16px; /* Adds padding inside dropdown links */
+    display: block; /* Makes the links take up the full width */
+    text-align: left; /* Aligns text to the left */
+    transition: background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.dropdown .dropdown-menu li {
+    width: 100%; /* Makes list items span the full width of the dropdown */
+}
+.dropdown .dropdown-menu a:hover {
+    background-color: rgba(0, 255, 255, 0.1); /* Adds a light cyan background on hover */
+}
+
+/* Show dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+    display: block; /* Displays the dropdown when the parent is hovered */
+}
+
+/* Underline Effect */
+.navigation ul li a::after {
+    content: ""; /* Adds a pseudo-element for the underline */
+    position: absolute; /* Positions the pseudo-element */
+    left: 0; /* Aligns it to the left of the parent link */
+    bottom: -5px; /* Positions it slightly below the text */
+    width: 0; /* Starts with no width (hidden) */
+    height: 2px; /* Sets the thickness of the underline */
+    background-color: #04a4f0; /* Sets the underline color */
+    transition: width 0.3s ease; /* Smooth transition for the underline animation */
+}
+
+.menu-toggle{
+    display: none;
+}
+/* Expand Underline on Hover */
+.navigation ul li a:hover::after {
+    width: 100%; /* Expands the underline to full width on hover */
+}
+
+@media (max-width: 768px) {
+    /* Container Content Styling */
+    .content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        gap: 20px;
+        text-align: center; /* Center-align the text content */
+    }
+
+    /* Heading Resizing */
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    /* Hero Image Resizing */
+    .hero-image {
+        width: 100%;
+        max-width: 300px;
+    }
+
+        /* Menu Toggle Button Styling */
+    .menu-toggle {
+        display: block; /* Display the button */
+        background-color: #212a31;
+        color: white;
+        border: none;
+        font-size: 1.5em;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-bottom: 20px;
+
+        /* Center the button horizontally */
+        margin-left: auto;
+        margin-right: auto;
+
+        /* Optionally center the button in the viewport vertically as well */
+        position: relative; /* Positioning for optional centering */
+    }
+
+    /* Navigation Content */
+    .navigation {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Ensure vertical layout */
+        align-items: center; /* Center align items horizontally */
+        background-color: #212a31;
+        padding: 10px 20px;
+        width: 100%; /* Full width for vertical alignment */
+        border-radius: 5px;
+        text-align: center; /* Center align text within the menu */
+        z-index: 1000; /* Ensure it's below the menu toggle button */
+        position: absolute; /* Position it relative to the header */
+        top: 100px; /* Place it right below the toggle button */
+    }
+
+    /* Make navigation visible when toggled */
+    .navigation.active {
+        display: flex; /* Display the navigation when active */
+    }
+
+    /* Navigation Links */
+    .navigation ul {
+        flex-direction: row; /* Stack links vertically */
+        gap: 1em;
+        list-style: none; /* Remove default bullets */
+        padding: 0;
+        margin: 0;
+    }
+
+    .navigation ul li {
+        width: 100%; /* Links take full width */
+    }
+
+    .navigation ul li a {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+        color: #cccccc;
+        text-decoration: none;
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+    }
+
+    .navigation ul li a:hover {
+        color: cyan; /* Highlight on hover */
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .navigation ul li a {
+        font-size: 1em;
+    }
+    /* Navigation Links */
+    .navigation ul {
+        flex-direction: column; /* Stack links vertically */
+        gap: 1em;
+        list-style: none; /* Remove default bullets */
+        padding: 0;
+        margin: 0;
+    }
+}

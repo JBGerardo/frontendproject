@@ -1,0 +1,823 @@
+/* Universal Reset */
+/* Resets margin, padding, and sets box-sizing for all elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic Styling */
+/* Sets full width and height for the page, and styles the font and layout */
+body, html {
+    width: 100%; /* Ensures full width */
+    height: 100%; /* Ensures full height */
+    font-family: Arial, sans-serif; /* Clean and modern sans-serif font */
+    background-color:  #212a31; /* Dark theme background */
+    color: #D3D9D4; /* White text for contrast */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Arranges content vertically */
+    align-items: center; /* Centers content horizontally */
+}
+
+/* Main Container Styling */
+/* Styles the main container with flexbox, animations, and spacing */
+.about-container {
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stacks content vertically */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    max-width: 1400px; /* Limits maximum width */
+    padding: 20px; /* Adds padding inside the container */
+    text-align: center; /* Centers text */
+    opacity: 0; /* Starts as transparent for animation */
+    transform: translateY(30px); /* Starts slightly below its final position */
+    animation: slideUpContent 1s ease-out forwards 0.6s; /* Smooth slide-up animation */
+    margin-top: 100px; /* Spacing below the header */
+}
+
+/* Header Styling with Animation */
+/* Styles the fixed header and its content */
+header {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Distributes items evenly */
+    align-items: center; /* Centers content vertically */
+    padding: 20px; /* Adds padding inside the header */
+    background-color:  #212a31;/* Matches page background */
+    width: 100%; /* Spans full width */
+    max-width: 1400px; /* Limits header width */
+    color: white; /* White text for contrast */
+    position: fixed; /* Fixes header at the top */
+    top: 0; /* Aligns header to the top */
+    z-index: 1000; /* Ensures header stays above other elements */
+}
+
+/* Logo Styling */
+/* Styles the logo section inside the header */
+header .logo {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Centers logo vertically */
+}
+
+header .logo img {
+    height: 100px; /* Fixed height for logo image */
+    margin-right: 10px; /* Adds spacing to the right of the image */
+}
+
+header .logo h1 {
+    font-size: 50px; /* Large font size for logo text */
+    color: white; /* White text for visibility */
+}
+
+/* Navigation Styling */
+/* Styles navigation links in the header */
+header nav {
+    display: inline-flex; /* Aligns navigation links in a row */
+    gap: 2em; /* Adds space between links */
+}
+
+header nav a {
+    color: #cccccc; /* Light gray text for contrast */
+    font-size: 1.5em; /* Slightly larger font size for visibility */
+    text-decoration: none; /* Removes underline from links */
+    position: relative; /* Allows for pseudo-element styling */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+header nav .nav-dropdown {
+    position: relative;
+}
+
+header nav .nav-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background: #212a31;
+    padding: 0.5rem 0;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+header nav .nav-dropdown .dropdown-content a {
+    display: block;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+header nav .nav-dropdown .dropdown-content a:hover {
+    background: #00bcd4;
+    color: #000;
+}
+
+header nav .nav-dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover for desktop */
+}
+
+/* Responsive Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Layout for Profile Page */
+.profile-page {
+    display: flex; /* Flexbox layout for the profile page */
+    padding: 20px; /* Adds padding inside the profile section */
+    max-width: 1200px; /* Limits the maximum width of the profile page */
+    margin-top: 160px; /* Adjusts top margin based on header height */
+    gap: 20px; /* Adds spacing between profile details and feed */
+    width: 100%; /* Ensures the profile page spans full width */
+}
+
+.profile-details {
+    flex: 1; /* Allocates 1 part of the available space */
+    max-width: 300px; /* Restricts the width of the profile details */
+    background-color: rgba(255, 255, 255, 0.05); /* Transparent white background */
+    padding: 20px; /* Adds padding inside the profile details */
+    border-radius: 10px; /* Rounds the corners */
+    text-align: center; /* Centers text inside the section */
+    animation: slideIn 1s ease-out; /* Applies slide-in animation */
+    max-height: auto; /* Allows height to adjust based on content */
+    top: 20px; /* Maintains distance from the top */
+}
+.profile-details .info-list{
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    text-align: left; /* Aligns paragraph text to the left */
+}
+
+.profile-details img {
+    width: 100px; /* Sets the profile picture width */
+    height: 100px; /* Ensures the profile picture is square */
+    border-radius: 50%; /* Makes the profile picture circular */
+    border: 3px solid cyan; /* Adds a cyan border around the picture */
+    margin-bottom: 10px; /* Adds space below the picture */
+}
+
+.profile-details h2 {
+    color: cyan; /* Highlights the name/title in cyan */
+    margin-bottom: 10px; /* Adds space below the heading */
+}
+
+.open-modal {
+    background-color: cyan; /* Button background color matches highlights */
+    color: #111; /* Dark text for contrast */
+    border: none; /* Removes border */
+    padding: 10px 20px; /* Adds padding inside the button */
+    border-radius: 5px; /* Rounds the button corners */
+    cursor: pointer; /* Changes cursor to indicate button interactivity */
+}
+
+/*pass */
+.open-modal:hover {
+    background-color: #00a0a0; /* Changes to darker cyan on hover */
+}
+
+/* Feed Section */
+.feed {
+    flex: 2; /* Allocates 2 parts of the available space */
+    background-color: rgba(255, 255, 255, 0.05); /* Transparent white background */
+    padding: 20px; /* Adds padding inside the feed */
+    border-radius: 10px; /* Rounds the corners */
+    animation: slideIn 1s ease-out; /* Applies slide-in animation */
+}
+
+.feed-item {
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    margin-bottom: 15px; /* Adds space between feed items */
+    padding: 15px; /* Adds padding inside feed items */
+    border-radius: 8px; /* Rounds the corners */
+}
+
+.feed-item h4 {
+    margin-bottom: 5px; /* Adds space below the heading */
+}
+
+.feed-item .date {
+    font-size: 0.9em; /* Reduces font size for date text */
+    color: #888; /* Light gray text for secondary information */
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hides the modal by default */
+    position: fixed; /* Fixes modal to the viewport */
+    z-index: 1; /* Ensures modal appears above other content */
+    left: 0; /* Aligns modal to the left edge */
+    top: 0; /* Aligns modal to the top edge */
+    width: 100%; /* Modal spans full viewport width */
+    height: 100%; /* Modal spans full viewport height */
+    background-color: rgba(0, 0, 0, 0.8); /* Adds a semi-transparent black overlay */
+    justify-content: center; /* Centers modal content horizontally */
+    align-items: center; /* Centers modal content vertically */
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #222; /* Sets modal background to dark gray */
+    padding: 20px; /* Adds padding inside the modal */
+    border-radius: 8px; /* Rounds modal corners */
+    text-align: center; /* Centers text inside the modal */
+    color: white; /* Sets text color to white for contrast */
+    width: 150%; /* Modal width is 80% of the viewport */
+    height: 80%;
+    max-width: 500px; /* Limits maximum width of the modal */
+
+}
+
+.close-modal {
+    position: absolute; /* Positions the close button relative to the modal */
+    top: 10px; /* Places it near the top of the modal */
+    right: 20px; /* Aligns it to the right side */
+    font-size: 1.5em; /* Sets a large font size for visibility */
+    color: white; /* White color for contrast */
+    cursor: pointer; /* Indicates the button is clickable */
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px); /* Starts off-screen */
+        opacity: 0; /* Invisible at the start */
+    }
+    to {
+        transform: translateX(0); /* Moves into view */
+        opacity: 1; /* Fully visible at the end */
+    }
+}
+
+
+/*Pass Basic styling for dropdown */
+.nav-dropdown {
+    position: relative; /* Ensures dropdown content is positioned relative to parent */
+    display: inline-block; /* Inline element with block-level behavior */
+}
+
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positions dropdown relative to parent */
+    background-color:#212a31; /* Dark background for contrast */
+    min-width: 400px; /* Ensures a minimum width */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+    z-index: 1000; /* Ensures it appears above other elements */
+    padding: 10px 0; /* Adds vertical spacing inside */
+    border-radius: 5px; /* Rounds the corners */
+}
+
+.show-dropdown {
+    display: block; /* Makes dropdown visible when toggled */
+}
+
+.dropdown-content a {
+    color: #ddd; /* Light gray text for contrast */
+    padding: 10px 16px; /* Adds padding for clickable area */
+    text-decoration: none; /* Removes underline */
+    display: block; /* Ensures links take full width */
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 255, 255, 0.1); /* Subtle background highlight on hover */
+}
+
+/* Styling for Add Post Form */
+.add-post {
+    background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+    padding: 15px; /* Adds padding inside */
+    border-radius: 8px; /* Rounds the corners */
+    margin-top: 20px; /* Adds spacing above the form */
+}
+
+.add-post input, .add-post textarea {
+    width: 100%; /* Full width for inputs */
+    margin-bottom: 10px; /* Spacing between elements */
+    padding: 10px; /* Adds padding inside inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounds input corners */
+}
+
+.add-post button {
+    background-color: cyan; /* Matches theme highlight color */
+    color: #111; /* Dark text for contrast */
+    border: none; /* Removes default border */
+    padding: 10px 20px; /* Adds padding inside button */
+    border-radius: 5px; /* Rounds button corners */
+    cursor: pointer; /* Indicates interactivity */
+    margin-top: 5px;
+}
+
+.add-post button:hover {
+    background-color: #00a0a0; /* Darker cyan on hover */
+}
+#addPictureBtn i {
+    font-size: 16px;
+}
+
+
+/* Styling for Add Feedback Form */
+.add-feedback {
+    background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+    padding: 15px; /* Adds padding inside */
+    border-radius: 8px; /* Rounds corners */
+    margin-top: 20px; /* Adds spacing above the form */
+}
+
+.add-feedback h4 {
+    margin-bottom: 10px; /* Adds spacing below the heading */
+}
+
+.add-feedback input, .add-feedback textarea {
+    width: 100%; /* Full width for inputs */
+    margin-bottom: 10px; /* Spacing between inputs */
+    padding: 10px; /* Adds padding inside inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounds input corners */
+}
+
+.add-feedback button {
+    background-color: cyan; /* Highlight button background */
+    color: #111; /* Dark text for contrast */
+    border: none; /* Removes default border */
+    padding: 10px 20px; /* Adds padding inside button */
+    border-radius: 5px; /* Rounds button corners */
+    cursor: pointer; /* Indicates interactivity */
+}
+
+.add-feedback button:hover {
+    background-color: #00a0a0; /* Darker cyan on hover */
+}
+
+/* Star Rating Styling */
+.star-rating {
+    text-align: center; /* Centers the star rating section */
+}
+
+.star {
+    font-size: 2.5em; /* Large star size for visibility */
+    color: #ccc; /* Gray stars by default */
+    cursor: pointer; /* Indicates interactivity */
+    transition: color 0.2s ease; /* Smooth color transition */
+}
+
+.star-empty {
+    font-size: 20px; /* Smaller size for unselected stars */
+    color: #ccc; /* Gray color for unselected state */
+}
+
+.star:hover,
+.star.selected {
+    color: yellow; /* Highlighted star color */
+}
+
+/* Right Sidebar for Reviews */
+.review-section {
+    flex: 1; /* Allocates 1 part of available space */
+    max-width: 300px; /* Restricts sidebar width */
+    background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+    padding: 15px; /* Adds padding inside the section */
+    border-radius: 8px; /* Rounds corners */
+    overflow: hidden; /* Hides overflowing content */
+    animation: slideIn 1s ease-out; /* Applies slide-in animation */
+    max-height: 800px; /* Sets a height limit */
+}
+
+/* Scrollable Review Items Container */
+.review-items {
+    max-height: 800px; /* Limits height for scroll area */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding-right: 5px; /* Adds padding for scrollbar */
+}
+
+/* Optional styling for scrollbar */
+.review-items::-webkit-scrollbar {
+    width: 8px; /* Sets scrollbar width */
+}
+
+.review-items::-webkit-scrollbar-thumb {
+    background-color: rgb(21, 90, 90); /* Sets scrollbar color */
+    border-radius: 4px; /* Rounds scrollbar edges */
+}
+
+.review-items::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(21, 90, 90); /* Darker shade on hover */
+}
+
+/* Review Item Styling */
+.review-items .review-item {
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
+    padding: 10px; /* Adds padding inside the review item */
+    margin-bottom: 10px; /* Spacing between reviews */
+    border-radius: 5px; /* Rounds corners */
+}
+
+.review-items .review-item h4 {
+    margin: 0 0 5px; /* Adds spacing below heading */
+}
+
+.review-items .review-item .star-rating {
+    color: yellow; /* Yellow stars for ratings */
+    font-size: 20px; /* Consistent size for stars */
+}
+
+/* Average Rating Display in Profile Details */
+.average-rating {
+    margin-top: 20px; /* Adds spacing above the section */
+    padding-top: 10px; /* Adds padding inside the section */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+    text-align: center; /* Centers the content */
+}
+
+#ratingDisplay .star {
+    font-size: 1.5em; /* Smaller stars for display */
+    color: cyan; /* Matches theme color */
+}
+#ratingValue {
+    font-weight: bold; /* Makes the rating value stand out with bold text */
+}
+
+/* Apply yellow color to all stars within the review section */
+.review-section .star-rating .star {
+    color: yellow; /* Sets star color to yellow for emphasis */
+    font-size: 20px; /* Ensures consistent size for stars */
+}
+
+/* Star Rating Styling for Review Section */
+.review-section .star-rating .star {
+    font-size: 20px; /* Defines the size of the stars */
+    color: yellow; /* Highlights stars in yellow */
+    margin-right: -5px; /* Reduces spacing between stars for a compact look */
+}
+
+/* Optional: Remove the margin on the last star to avoid extra spacing */
+.review-section .star-rating .star:last-child {
+    margin-right: 0; /* Eliminates extra spacing after the last star */
+}
+.upload-box {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.uploaded-files {
+    margin-top: 20px;
+}
+
+.file-preview {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    max-width: 100%;
+}
+
+/* Menu toggle button styles for smaller screens */
+.menu-toggle {
+    display: none;
+    background-color: #212a31;
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+/* Responsive Design */
+/* General Styles for Aside */
+aside.profile-details {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Modal View on Small Screens */
+.profile-details.modal-view {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+    height: 80%; /* Adjust height to fit within the viewport */
+    background-color: #212a31;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow-y: auto; /* Enable scrolling for long content */
+    padding: 20px;
+}
+
+/* Close Button for the Modal View */
+.profile-details .close-profile {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Scrollable Modal Content */
+.profile-details.modal-view::-webkit-scrollbar {
+    width: 10px;
+}
+
+.profile-details.modal-view::-webkit-scrollbar-thumb {
+    background: #888; /* Gray scrollbar thumb */
+    border-radius: 5px;
+}
+
+.profile-details.modal-view::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker on hover */
+}
+
+.toggle-profile-btn {
+    position: absolute; /* Removes it from view */
+    z-index: -1; /* Pushes it behind other elements */
+}
+
+/* Container for Profile and Reviews */
+.container {
+    display: flex; /* Flexbox layout */
+    gap: 20px; /* Spacing between profile and review sections */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center; /* Center align items */
+}
+
+/* General Styles for Profile Details */
+aside.profile-details {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* General Styles for Reviews Section */
+aside.review-section {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+.review-section .star-empty {
+    color: #ccc;
+}
+
+/* General Styles for the Modal */
+#infoModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position to stay in viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black overlay with opacity */
+    justify-content: center; /* Center modal horizontally */
+    align-items: center; /* Center modal vertically */
+    z-index: 9999; /* Ensure it stays on top of all other content */
+}
+
+/* Modal Content */
+#infoModal .modal-content {
+    background-color: #222; /* Dark background for modal content */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%; /* Responsive width */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-align: center; /* Center-align text inside the modal */
+    position: relative; /* Position relative to contain close button */
+}
+
+/* Close Button */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10000; /* Keep it on top of modal content */
+}
+
+/* iFrame for Document Viewer */
+#documentViewer iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+/* Download Link */
+.download-link {
+    color: cyan;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+
+/* Mobile and Smaller Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Adjusted Body and HTML for Scrolling */
+    body, html {
+        font-size: 16px;
+        flex-direction: column;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    /* General Container Adjustments */
+    .container {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Typography Adjustments */
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    /* Header Navigation for Small Screens */
+    header nav {
+        display: none;
+        flex-direction: column;
+        background: #212a31;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        border-radius: 5px;
+        gap: 0;
+    }
+
+    header nav a,
+    header nav .nav-dropdown {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    header .menu-toggle {
+        display: block;
+    }
+
+    header nav .nav-dropdown .dropdown-content {
+        position: relative;
+        display: none;
+        border-radius: 5px;
+    }
+
+    header nav .nav-dropdown.active .dropdown-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+     /* Profile Details Hidden by Default */
+     aside.profile-details {
+        display: none;
+    }
+
+    /* Button to Toggle the Aside Section */
+    .toggle-profile-btn {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #00bcd4;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50%;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        font-size: 1.5rem;
+        z-index: 999;
+    }
+
+    /* Close Button Displayed in Modal View */
+    .review-section .close-profile {
+        display: block;
+    }
+    aside.review-section {
+        display: none;
+    }
+}
+
+/* Keyframe Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Tablets and Medium Screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px; /* Adjust padding */
+        max-width: 90%; /* Reduce max width to fit the screen better */
+    }
+
+    .hero-image {
+        max-width: 350px; /* Scale image size */
+    }
+
+    .content {
+        gap: 30px; /* Adjust spacing between elements */
+    }
+
+    h1 {
+        font-size: 3em; /* Adjust heading size */
+    }
+
+    h2 {
+        font-size: 2em; /* Adjust subheading size */
+    }
+
+    .navigation ul {
+        gap: 1.5em; /* Adjust spacing between links */
+    }
+
+}
+
+/* Large Screens (min-width: 1025px) */
+@media (min-width: 1025px) {
+    .container {
+        padding: 20px; /* Maintain padding for large screens */
+    }
+
+    .content {
+        gap: 40px; /* Maintain spacing for large screens */
+    }
+
+    .hero-image {
+        max-width: 400px; /* Maintain image size */
+    }
+
+    h1 {
+        font-size: 4em; /* Maintain heading size */
+    }
+
+    h2 {
+        font-size: 2.5em; /* Maintain subheading size */
+    }
+}

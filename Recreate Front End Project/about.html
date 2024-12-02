@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="CSS\about.css">
+    
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- External JavaScript file -->
+    <script src="JS\about.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Image Index\Computer background.PNG" alt="Team Logo">
+            <h1>Our <span class="highlight">Team</span></h1>
+        </div>
+    
+        <!-- Menu Toggle Button -->
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+    
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" style="color: cyan;">About</a>
+            <div class="nav-dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" >Team Members</a>
+                <div class="dropdown-content">
+                    <a href="FirstProfile.html" class="active">John Carlo Sinoy - Coder</a>
+                    <a href="SecondProfile.html">Justin Mangawang - Documentation Specialist</a>
+                    <a href="ThirdProfile.html">John Gerardo - Tester</a>
+                </div>
+            </div>
+            <a href="Project.html">Projects</a>
+            <a href="contacts.html">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- About Container with Popups -->
+    <div class="about-container">
+        <div class="content-wrapper">
+            <div class="about-content">
+                <!-- About Us Section -->
+                <div class="popup-image popup-top-left" id="popupImage1">
+                    <img src="Image About\about-us.PNG" alt="About Us">
+                    <div class="popup-text">
+                        <h2>About Us</h2>
+                        <p> 
+                            We are driven by integrity, collaboration, and excellence, pushing boundaries 
+                            to create lasting, impactful solutions. With transparency and trust, we empower 
+                            our clients and uplift the communities we serve.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mission Section -->
+                <div class="popup-image popup-top-right" id="popupImage2">
+                    <img src="Image About\mission.PNG" alt="Mission">
+                    <div class="popup-text">
+                        <h2>Mission</h2>
+                        <p>
+                            Our mission is to deliver innovative and effective solutions that drive success for 
+                            our clients. We are dedicated to creating a collaborative environment where ideas 
+                            flourish and meaningful impacts are made.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vision Section -->
+                <div class="popup-image popup-bottom-left" id="popupImage3">
+                    <img src="Image About\Vision.PNG" alt="Vision">
+                    <div class="popup-text">
+                        <h2>Vision</h2>
+                        <p>
+                            Our vision is to become a leader in our industry by fostering creativity, integrity, 
+                            and a relentless pursuit of excellence. We envision a future where our work inspires 
+                            others and positively shapes the communities we serve.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Core Values Section -->
+                <div class="popup-image popup-bottom-right" id="popupImage4">
+                    <img src="Image About\core values.PNG" alt="Team Overview">
+                    <div class="popup-text">
+                        <h2>Team Overview</h2>
+                        <p> 
+                            Our dedicated team collaborates to deliver innovative solutions, with each member 
+                            bringing unique skills in project management, development, design, and quality 
+                            assurance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <img src="Image About\about-us.PNG" alt="Description" class="overlay-image">
+            <div class="overlay-text">
+                <h2>About Us</h2>
+                <p>
+                    We are driven by a shared commitment to integrity, collaboration, and excellence. 
+                    Our team strives to push boundaries and create meaningful solutions that have a lasting 
+                    positive impact. We value transparency, trust, and empowering our clients and community 
+                    with every project we undertake.
+                </p>
+                <button id="closeOverlay">Close</button>
+            </div>
+        </div>
+    </div>
+    <div id="overlay2" class="overlay">
+        <div class="overlay-content">
+            <img src="Image About\mission.PNG" alt="Description" class="overlay-image">
+            <div class="overlay-text">
+                <h2>Mission</h2>
+                <p>
+                    Our mission is to empower our clients with innovative, effective solutions 
+                    that drive measurable success and exceed expectations. We believe in fostering 
+                    an environment where creativity, collaboration, and continuous improvement thrive, enabling our team to transform ideas into impactful actions.
+                    With a foundation rooted in integrity, excellence, and client focus, we approach 
+                    each project with dedication and a commitment to quality. Our goal is to not only 
+                    deliver results that inspire growth and provide lasting value but also to build 
+                    meaningful partnerships with our clients and the communities we serve.
+                </p>
+                <button id="closeOverlay2">Close</button>
+            </div>
+        </div>
+    </div>
+    <div id="overlay3" class="overlay">
+        <div class="overlay-content">
+            <img src="Image About\Vision.PNG" alt="Description" class="overlay-image">
+            <div class="overlay-text">
+                <h2>Vision</h2>
+                <p>
+                    Our vision is to become a trusted leader and innovator in our industry, 
+                    recognized not only for our technical expertise but also for our unwavering 
+                    commitment to integrity, creativity, and excellence. We aspire to shape a 
+                    future where our solutions drive meaningful progress, inspire positive change, 
+                    and empower our clients, partners, and communities.
+                </p>
+                <button id="closeOverlay3">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Team Overview Overlay -->
+<div id="overlay4" class="overlay4">
+    <div class="overlay4-content">
+        <h2>TEAM OVERVIEW</h2>
+        <div class="team-profiles" >
+            <!-- Team Member 1 - Coder -->
+            <div class="team-member"  data-url="FirstProfile.html">
+                <img src="Image About\profile1.webp" alt="Profile Picture" class="circular-image">
+                <h3>John Carlo Sinoy</h3>
+                <p><strong>Role:</strong> Coder</p>
+                <p>Specializes in developing efficient and scalable code solutions.</p>
+                <p><strong>Expertise:</strong> JavaScript, Python, C++</p>
+            </div>
+        
+            <!-- Team Member 2 - Tester -->
+            <div class="team-member" data-url="SecondProfile.html">
+                <img src="Image About\profile1.webp" alt="Profile Picture" class="circular-image">
+                <h3>Justin Mangawang</h3>
+                <p><strong>Role:</strong> Tester</p>
+                <p>Ensures product quality by performing thorough testing and debugging.</p>
+                <p><strong>Expertise:</strong> Java, Selenium, Python</p>
+            </div>
+        
+            <!-- Team Member 3 - Documentation Specialist -->
+            <div class="team-member" data-url="ThirdProfile.html">
+                <img src="Image About\profile1.webp" alt="Profile Picture" class="circular-image">
+                <h3>John Gerardo</h3>
+                <p><strong>Role:</strong> Documentation Specialist</p>
+                <p>Creates clear and concise documentation to support product usability.</p>
+                <p><strong>Expertise:</strong> Markdown, LaTeX, HTML/CSS</p>
+            </div>
+        </div>
+        
+        
+
+        <!-- Close Button -->
+        <button id="closeOverlay4">Close</button>
+    </div>
+</div>
+        
+</body>
+</html>

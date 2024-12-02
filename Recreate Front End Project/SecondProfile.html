@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="CSS\ProfileMember.css">
+    <script src="JS\SecondMember.js"></script>
+</head>
+<body>
+    <!-- Header Section with Logo and Navigation Links -->
+<header>
+    <div class="logo">
+        <img src="Image Index\Computer background.PNG" alt="Team Logo">
+        <h1>Our <span class="highlight" style="color: cyan;">Team</span></h1>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle" style="color: cyan;">Team Members</a>
+            <div class="dropdown-content">
+                <a href="FirstProfile.html" class="active">John Carlo Sinoy - Coder</a>
+                <a href="SecondProfile.html">Justin Mangawang - Documentation Specialist</a>
+                <a href="ThirdProfile.html">John Gerardo - Tester</a>
+            </div>
+        </div>
+        <a href="Project.html">Projects</a>
+        <a href="contacts.html">Contact</a>
+    </nav>
+</header>
+
+
+    <div class="profile-page">
+        <!-- Left Sidebar: Profile Details -->
+        <aside class="profile-details">
+            <img src="Image Profile\profile1.webp" alt="Profile Picture" class="profile-pic">
+            <h2>Justin Mangawang</h2>
+            <p>Justin Mangawang is a skilled software tester with a keen eye for detail. His thorough testing ensures that each product is functional and bug-free, enhancing the overall user experience.</p>
+            <ul class="info-list">
+                <li><strong>Location:</strong> New York, USA</li>
+                <li><strong>Joined:</strong> January 2023</li>
+                <li><strong>Role:</strong> Tester</li>
+            </ul>
+            <!-- Modal -->
+            <div id="infoModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div id="documentViewer">
+                        <iframe id="documentFrame" src="" style="width: 100%; height: 500px; border: none; margin-bottom: 10px;"></iframe>
+                        <a id="downloadLink" href="" download class="download-link" style="color: cyan;">Download Document</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button to Open Modal -->
+            <button class="open-modal">View Resume</button>
+
+        
+            <!-- Display Average Rating -->
+            <div class="average-rating">
+                <h4>Average Rating</h4>
+                <div id="ratingDisplay">
+                    <!-- Initial stars to represent 4.3 rating -->
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star-half">&#9733;</span>
+                </div>
+                <span id="ratingValue">4.3</span>/5
+            </div>
+        
+            <!-- Add Review Form -->
+            <section class="add-feedback">
+                <h4>Add a Review</h4>
+                <input type="text" id="reviewTitle" placeholder="Review Title" />
+                <textarea id="reviewContent" placeholder="Review Content"></textarea>
+        
+                <!-- Star Rating Section -->
+                <div class="star-rating">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+        
+                <button id="addReviewBtn">Add Review</button>
+            </section>
+        </aside>
+        
+        <main class="feed">
+            <h3>Justin Mangawang's Feed</h3>
+        
+            <!-- Add New Post Section at the Top -->
+            <section class="add-post">
+                <h4>Add New Post</h4>
+                <input type="text" id="postTitle" placeholder="Post Title" />
+                <textarea id="postContent" placeholder="Post Content"></textarea>
+                <button id="addPostBtn">Add Post</button>
+            </section>
+        
+            <!-- Feed Items Section -->
+            <div class="feed-items">
+                <section class="feed-item">
+                    <h4>Testing New Feature Implementation</h4>
+                    <p>Completed testing on the latest feature rollout. All bugs have been resolved, ensuring a smooth user experience.</p>
+                    <span class="date">Posted on: October 5, 2024</span>
+                </section>
+                <section class="feed-item">
+                    <h4>Attended Software Testing Conference 2024</h4>
+                    <p>Gained valuable insights at the Software Testing Conference on advanced testing strategies and tools for improving efficiency.</p>
+                    <span class="date">Posted on: September 20, 2024</span>
+                </section>
+                <section class="feed-item">
+                    <h4>Automated Testing Framework</h4>
+                    <p>Successfully integrated a new automated testing framework to expedite our testing process and reduce manual errors.</p>
+                    <span class="date">Posted on: August 15, 2024</span>
+                </section>
+                <section class="feed-item">
+                    <h4>Led Internal Testing Workshop</h4>
+                    <p>Organized a workshop for team members on the basics of test planning and execution to improve testing practices across the team.</p>
+                    <span class="date">Posted on: July 28, 2024</span>
+                </section>
+            </div>
+        </main>
+        
+        <!-- Right Sidebar: Reviews Section -->
+        <aside class="review-section">
+            <h3>User Reviews</h3>
+            <div class="review-items">
+                <div class="review-item">
+                    <h4>Impressive Attention to Detail</h4>
+                    <p>Justin identified several bugs that would have impacted our users. His attention to detail has really improved our product quality.</p>
+                    <div class="star-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star-empty">&#9733;</span>
+
+                    </div>
+                </div>
+                <div class="review-item">
+                    <h4>Quick and Thorough</h4>
+                    <p>Justin is quick to find issues and very thorough in testing each feature. His contributions have saved us time and effort.</p>
+                    <div class="star-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <h4>Great Team Player</h4>
+                    <p>Justin is always willing to collaborate and provide helpful feedback. He's a great asset to the team!</p>
+                    <div class="star-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star-empty">&#9733;</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+
+</body>
+</html>

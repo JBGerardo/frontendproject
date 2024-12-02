@@ -1,0 +1,647 @@
+/* Universal Reset */
+/* Resets margin, padding, and sets box-sizing for all elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic Styling */
+/* Sets full width and height for the page, and styles the font and layout */
+body, html {
+    width: 100%; /* Ensures full width */
+    height: 100%; /* Ensures full height */
+    font-family: Arial, sans-serif; /* Clean and modern sans-serif font */
+    background-color:  #212a31; /* Dark theme background */
+    color: #D3D9D4; /* White text for contrast */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Arranges content vertically */
+    align-items: center; /* Centers content horizontally */
+}
+
+/* Main Container Styling */
+/* Styles the main container with flexbox, animations, and spacing */
+.about-container {
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stacks content vertically */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    max-width: 1400px; /* Limits maximum width */
+    padding: 20px; /* Adds padding inside the container */
+    text-align: center; /* Centers text */
+    opacity: 0; /* Starts as transparent for animation */
+    transform: translateY(30px); /* Starts slightly below its final position */
+    animation: slideUpContent 1s ease-out forwards 0.6s; /* Smooth slide-up animation */
+    margin-top: 100px; /* Spacing below the header */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #212a31;
+    width: 100%;
+    max-width: 1400px;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Styling */
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 100px;
+    margin-right: 10px;
+}
+
+header .logo h1 {
+    font-size: 50px;
+    color: white;
+}
+
+/* Navigation Styling */
+header nav {
+    display: inline-flex;
+    gap: 2em;
+}
+
+header nav a {
+    color: #cccccc;
+    font-size: 1.5em;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Dropdown Menu */
+header nav .nav-dropdown {
+    position: relative;
+}
+
+header nav .nav-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background: #212a31;
+    padding: 0.5rem 0;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+header nav .nav-dropdown .dropdown-content a {
+    display: block;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+header nav .nav-dropdown .dropdown-content a:hover {
+    background: #00bcd4;
+    color: black;
+}
+
+header nav .nav-dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+/* Responsive Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* About Page Content */
+/* Styles the main heading and description text */
+.about-container .header h1 {
+    font-size: 4em; /* Large font size for the main heading */
+    font-weight: bold; /* Emphasizes the heading */
+    margin-top: 100px; /* Adds spacing below the header */
+    color: white; /* White text for contrast */
+}
+
+.about-container .header p {
+    font-size: 1.2em; /* Medium font size for the description */
+    color: #cccccc; /* Light gray text */
+    margin-bottom: 1em; /* Adds spacing below the paragraph */
+}
+
+.highlight {
+    color: cyan; /* Highlights text in cyan */
+}
+
+/* About Content Layout */
+/* Styles the layout for additional content sections */
+.about-content {
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Wraps content to the next line if needed */
+    gap: 40px; /* Adds space between items */
+    justify-content: center; /* Centers content */
+    margin-top: 50px; /* Adds spacing above the content */
+}
+
+/* Popup Image and Text Styling */
+/* Styles images and text in pop-up sections */
+.popup-image {
+    position: relative; /* Prepares for animations */
+    width: 250px; /* Fixed width for images */
+    text-align: center; /* Centers text below the image */
+    margin-top: 20px; /* Adds spacing above the image */
+}
+
+.popup-image img {
+    width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Rounds image corners */
+    margin-bottom: 10px; /* Adds spacing below the image */
+}
+
+.popup-text h2 {
+    font-size: 2em; /* Medium font size for section headings */
+    color: cyan; /* Highlights headings in cyan */
+    margin-top: 0; /* Removes top margin */
+    margin-bottom: 10px; /* Adds spacing below the heading */
+}
+
+.popup-text p {
+    font-size: 1.2em; /* Medium font size for paragraph text */
+    color: #cccccc; /* Light gray text */
+    line-height: 1.6; /* Improves readability */
+    text-align: justify; /* Aligns text for a neat layout */
+}
+
+.popup-image:hover {
+    transform: translateY(-10px); /* Moves the image upwards on hover */
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4); /* Adds a glow effect */
+    background-color: rgba(0, 255, 255, 0.1); /* Subtle background color change */
+    cursor: pointer; /* Indicates interactivity */
+}
+
+/* Animates elements sliding upward into view */
+@keyframes slideUpContent {
+    from {
+        opacity: 0; /* Starts as invisible */
+        transform: translateY(30px); /* Starts below the final position */
+    }
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Moves into final position */
+    }
+}
+
+.popup-link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits color from parent */
+    display: inline-block; /* Allows for block-like behavior */
+    width: 100%; /* Spans the full width of the container */
+}
+
+.popup-link:hover {
+    cursor: pointer; /* Indicates the link is clickable */
+}
+
+/* General Overlay Styling */
+.overlay {
+    position: fixed; /* Fixed position for full-screen overlay */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    display: none; /* Hidden by default */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    z-index: 1000; /* Ensure it's above other content */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    padding: 20px; /* Add padding inside overlay */
+}
+
+/* Shared Overlay Content Styling */
+.overlay-content {
+    background-color: #212a31; /* Dark background for content */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2); /* Subtle shadow */
+    max-width: 600px; /* Limit content width */
+    width: 100%; /* Full width within max-width */
+    text-align: center; /* Center-align text */
+    color: #cccccc; /* Light gray text */
+}
+
+.overlay-image {
+    width: 100%; /* Full width for responsive image */
+    max-width: 300px; /* Limit image size */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the image */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.overlay-text h2 {
+    font-size: 2em; /* Large heading size */
+    color: cyan; /* Cyan text for emphasis */
+    margin-bottom: 10px;
+}
+
+.overlay-text p {
+    font-size: 1.2em;
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: cyan;
+    color: #212a31;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #18ffff; /* Lighter cyan on hover */
+}
+
+/* Specific Styles for Overlay 1 (About Us) */
+#overlay {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+}
+
+#overlay .overlay-content {
+    border: 2px solid cyan; /* Cyan border for emphasis */
+}
+
+/* Specific Styles for Overlay 2 (Mission) */
+#overlay2 {
+    background-color:  rgba(0, 0, 0, 0.8); /* Slightly darker tone */
+}
+
+#overlay2 .overlay-content {
+    border: 2px solid #66fcf1; /* Lighter cyan border */
+}
+
+/* Specific Styles for Overlay 3 (Vision) */
+#overlay3 {
+    background-color:  rgba(0, 0, 0, 0.8); /* Bluish tone */
+}
+
+#overlay3 .overlay-content {
+    border: 2px solid #00e6e6; /* Bright teal border */
+}
+
+.overlay4 {
+    position: fixed; /* Fixed to viewport */
+    top: 0; /* Aligns to the top of the viewport */
+    left: 200%; /* Starts off-screen to the right */
+    width: 100%; /* Covers full width */
+    height: 100%; /* Covers full height */
+    background-color: rgba(17, 17, 17, 0.8); /* Semi-transparent dark background */
+    backdrop-filter: blur(10px); /* Applies a blur effect */
+    display: flex; /* Flexbox for layout */
+    justify-content: center; /* Centers overlay content horizontally */
+    align-items: center; /* Centers overlay content vertically */
+    transition: left 0.5s ease; /* Smooth sliding effect */
+    z-index: 2000; /* Places it above other elements */
+    border: solid cyan; /* Adds a cyan border */
+}
+
+.overlay4.active {
+    left: 0px; /* Moves the overlay into view */
+}
+
+/* Overlay 4 Content Styling */
+.overlay4-content {
+    border-radius: 8px; /* Rounds the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for a pop-out effect */
+    text-align: center; /* Centers the text */
+}
+
+/* Overlay 4 Heading */
+.overlay4-content h2 {
+    font-size: 2.5em; /* Large font size for emphasis */
+    gap: 20px; /* Adds space between elements */
+    margin-bottom: 20px; /* Adds spacing below the heading */
+    color: cyan; /* Highlights the heading in cyan */
+    text-align: center; /* Centers the heading text */
+}
+
+/* Ensure overlay container is scrollable and aligns properly */
+.team-profiles {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Stack members horizontally */
+    gap: 20px; /* Add spacing between members */
+    max-height: 600px; /* Restrict height */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Prevent accidental vertical scrolls */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin issues */
+    position: relative; /* Position it properly */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+
+.team-member {
+    width: 80%; /* Occupies 80% of the container width */
+    max-width: 400px; /* Limits maximum width */
+    max-height: 100%;
+    text-align: center; /* Centers the text */
+    color: #cccccc; /* Light gray text */
+    padding: 20px; /* Adds padding inside */
+    border: 1px solid cyan; /* Adds a cyan border */
+    border-radius: 8px; /* Rounds the corners */
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2); /* Adds a light cyan shadow */
+    background-color: #111; /* Dark background for contrast */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effects */
+    cursor: pointer; /* Indicates interactivity */
+}
+
+/* Hover Effects for Team Member */
+.team-member:hover {
+    transform: translateY(-10px); /* Lifts the card on hover */
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4); /* Adds enhanced shadow */
+    background-color: rgba(0, 255, 255, 0.1); /* Light cyan background on hover */
+    border-color: cyan; /* Keeps border cyan during hover */
+    cursor: pointer;
+}
+
+/* Circular Image Styling */
+.team-member img {
+    width: 200px; /* Fixed width for circular image */
+    height: 200px; /* Ensures the image is square */
+    border-radius: 50%; /* Makes the image circular */
+    margin-bottom: 10px; /* Adds spacing below the image */
+    transition: transform 0.3s ease; /* Smooth animation for scaling */
+}
+
+/* Hover Effect for Team Member Image */
+.team-member:hover img {
+    transform: scale(1.05); /* Slightly enlarges image on hover */
+    cursor: pointer; /* Indicates interactivity */
+}
+
+/* Team Member Heading */
+.team-member h3 {
+    font-size: 2em; /* Large font size for emphasis */
+    color: cyan; /* Highlights heading in cyan */
+    margin: 10px 0 5px; /* Adds spacing around the heading */
+}
+
+/* Team Member Description */
+.team-member p {
+    font-size: 1.5em; /* Medium font size for readability */
+    line-height: 1.5; /* Improves readability */
+    color: #cccccc; /* Light gray text */
+    margin: 5px 0; /* Adds spacing around the text */
+    text-align: left; /* Aligns text to the left */
+} 
+/* Star Rating Styling */
+.rating {
+    margin-top: 10px; /* Adds spacing above the stars */
+    font-size: 1.5em; /* Adjusts star size */
+    color: gold; /* Sets star color to gold */
+}
+
+.star {
+    padding: 0 2px; /* Adds spacing between stars */
+}
+
+/* Circular Image Styling for Specific Cases */
+.circular-image {
+    background-color: white; /* Adds a white background */
+    width: 400px; /* Fixed width for circular container */
+    height: 400px; /* Ensures square dimensions */
+    border-radius: 50%; /* Makes the container circular */
+    border: 2px solid cyan; /* Adds a cyan border */
+    object-fit: cover; /* Ensures the image covers the circular frame */
+}
+
+/* Close Button Styling for Overlay 4 */
+#closeOverlay4 {
+    position: absolute; /* Positions button relative to overlay */
+    top: 100px; /* Adjusts position from the top */
+    left: 100px; /* Adjusts position from the left */
+    font-size: 2em; /* Large font size for visibility */
+    color: cyan; /* Matches the theme */
+    background-color: transparent; /* Transparent background */
+    border: none; /* Removes default border */
+    cursor: pointer; /* Indicates interactivity */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+#closeOverlay4::before {
+    content: "×"; /* Adds a close icon */
+}
+
+/* Hover Effect for Close Button */
+#closeOverlay4:hover {
+    color: #ff0000; /* Changes color to red for emphasis */
+    cursor: pointer; /* Keeps pointer to indicate interactivity */
+}
+
+/* Dropdown in Navigation */
+/* Styles a dropdown menu for navigation */
+.nav-dropdown {
+    position: relative; /* Positions dropdown relative to parent */
+    display: inline-block; /* Allows dropdown to behave like an inline block */
+}
+
+.dropdown-content {
+    display: none; /* Hides dropdown content by default */
+    position: absolute; /* Positions content relative to parent */
+    background-color: #212a31; /* Dark background for contrast */
+    min-width: 400px; /* Sets a minimum width */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+    z-index: 1; /* Ensures it appears above other elements */
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: black; /* Black text for contrast */
+    padding: 12px 16px; /* Adds padding for clickable area */
+    text-decoration: none; /* Removes underline */
+    display: block; /* Makes links take up full width */
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 255, 255, 0.1); /* Adds a light cyan background on hover */
+}
+
+.menu-toggle{
+    display: none;
+}
+
+/* Mobile and Smaller Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    body, html {
+        font-size: 16px;
+        flex-direction: column;
+        height: 100%; /* Ensure body takes full height for scrolling */
+        overflow-y: auto; /* Enable vertical scrolling for the body */
+    }
+
+    .container {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    header nav {
+        display: none;
+        flex-direction: column;
+        background: #212a31;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        border-radius: 5px;
+        gap: 0;
+    }
+
+    header nav a,
+    header nav .nav-dropdown {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    header .menu-toggle {
+        display: block;
+    }
+
+    header nav .nav-dropdown .dropdown-content {
+        position: relative;
+        display: none;
+        border-radius: 5px;
+    }
+
+    header nav .nav-dropdown.active .dropdown-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Team Profiles */
+    .team-profiles {
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack members vertically */
+        gap: 20px; /* Add spacing between members */
+        max-height: 80vh; /* Restrict height to 80% of the viewport */
+        overflow-y: auto; /* Enable vertical scrolling */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        padding: 10px; /* Add padding for spacing */
+        margin: 0; /* Ensure no external margins block the view */
+        position: relative; /* Ensure it's in the correct flow */
+    }
+
+    /* Styling for Individual Team Members */
+    .team-member {
+        width: 90%; /* Occupies most of the screen width */
+        max-width: 350px; /* Limit max width */
+        text-align: center; /* Center align text */
+        border: 1px solid cyan; /* Cyan border */
+        border-radius: 8px; /* Rounded corners */
+        background-color: #111; /* Dark background */
+        box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2); /* Subtle shadow */
+        cursor: pointer; /* Pointer cursor for interactivity */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    }
+
+    .team-member:hover {
+        transform: translateY(-10px); /* Lift card on hover */
+        box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4); /* Enhanced shadow */
+        background-color: rgba(0, 255, 255, 0.1); /* Cyan tint */
+    }
+
+    .team-member img {
+        width: 120px; /* Smaller image size for mobile */
+        height: 120px; /* Maintain circular shape */
+        border-radius: 50%; /* Make image circular */
+        margin-bottom: 10px; /* Space below image */
+    }
+
+    .team-member h3 {
+        font-size: 1.6em; /* Adjust heading size */
+        color: cyan; /* Cyan text for emphasis */
+    }
+
+    .team-member p {
+        font-size: 1em; /* Smaller text for descriptions */
+        line-height: 1.5; /* Improve readability */
+        color: #cccccc; /* Light gray text */
+    }
+
+    /* Scrollbar Styling */
+    .team-profiles::-webkit-scrollbar {
+        width: 8px; /* Set scrollbar width */
+    }
+
+    .team-profiles::-webkit-scrollbar-thumb {
+        background-color: cyan; /* Cyan scrollbar thumb */
+        border-radius: 5px; /* Rounded scrollbar */
+    }
+
+    .team-profiles::-webkit-scrollbar-track {
+        background: #111; /* Dark background for scrollbar track */
+    }
+     .overlay-content {
+        max-width: 90%; /* Expand content width for small screens */
+    }
+
+    .overlay-image {
+        max-width: 200px; /* Reduce image size on mobile */
+    }
+
+    .overlay-text h2 {
+        font-size: 1.8em; /* Slightly smaller heading */
+    }
+
+    .overlay-text p {
+        font-size: 1em; /* Adjust paragraph size */
+    }
+    #closeOverlay4 {
+        position: absolute; /* Positions button relative to overlay */
+        top: 0px; /* Adjusts position from the top */
+        left: 0px; /* Adjusts position from the left */
+        font-size: 1.5em; /* Large font size for visibility */
+        color: cyan; /* Matches the theme */
+        background-color: transparent; /* Transparent background */
+        border: none; /* Removes default border */
+        cursor: pointer; /* Indicates interactivity */
+        transition: color 0.3s ease; /* Smooth color change on hover */
+    }
+}

@@ -1,0 +1,226 @@
+/* Universal Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic Styling */
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #212a31;
+    color: #D3D9D4;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #212a31;
+    width: 100%;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+header .logo h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+}
+
+header .logo .highlight {
+    color: cyan;
+}
+
+/* Navigation Menu */
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover,
+header nav a[style="color: cyan;"] {
+    color: cyan;
+}
+
+/* Dropdown Menu */
+header nav .nav-dropdown {
+    position: relative;
+}
+
+header nav .nav-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background: #212a31;
+    padding: 0.5rem 0;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+header nav .nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Contact Container */
+.contact-container {
+    margin-top: 150px;
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-container h1 {
+    font-size: 3em;
+    color: cyan;
+    margin-bottom: 10px;
+}
+
+.contact-container h2 {
+    font-size: 1.5em;
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+/* Contact List */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Contact Card */
+.contact-card {
+    background-color: #212a31;
+    border: 1px solid cyan;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4);
+}
+
+.contact-card h2 {
+    font-size: 1.5em;
+    color: cyan;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 1em;
+    color: #cccccc;
+}
+
+.contact-card a {
+    color: #66FCF1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: cyan;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    header .logo {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5em;
+    }
+
+    header nav a {
+        font-size: 1em;
+    }
+
+    .contact-container h1 {
+        font-size: 2.5em;
+    }
+
+    .contact-container h2 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px;
+    }
+
+    header .logo img {
+        height: 40px;
+    }
+
+    header .logo h1 {
+        font-size: 1.5em;
+    }
+
+    header nav a {
+        font-size: 0.9em;
+    }
+
+    .contact-container h1 {
+        font-size: 2em;
+    }
+
+    .contact-container h2 {
+        font-size: 1em;
+    }
+
+    .contact-card {
+        padding: 15px;
+    }
+
+    .contact-card h2 {
+        font-size: 1.2em;
+    }
+
+    .contact-card p {
+        font-size: 0.9em;
+    }
+}

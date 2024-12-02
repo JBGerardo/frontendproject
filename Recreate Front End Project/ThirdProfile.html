@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="CSS\ProfileMember.css">
+    <script src="JS\ThirdMember.js"></script>
+</head>
+<body>
+    <!-- Header Section with Logo and Navigation Links -->
+<header>
+    <div class="logo">
+        <img src="Image Index\Computer background.PNG" alt="Team Logo">
+        <h1>Our <span class="highlight" style="color: cyan;">Team</span></h1>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle" style="color: cyan;">Team Members</a>
+            <div class="dropdown-content">
+                <a href="FirstProfile.html" class="active">John Carlo Sinoy - Coder</a>
+                <a href="SecondProfile.html">Justin Mangawang - Documentation Specialist</a>
+                <a href="ThirdProfile.html">John Gerardo - Tester</a>
+            </div>
+        </div>
+        <a href="Project.html">Projects</a>
+        <a href="contacts.html">Contact</a>
+    </nav>
+</header>
+
+
+    <div class="profile-page">
+        <!-- Left Sidebar: Profile Details -->
+        <aside class="profile-details">
+            <img src="Image Profile\profile1.webp" alt="Profile Picture" class="profile-pic">
+            <h2>John Gerardo</h2>
+            <p>John Gerardo is a dedicated Documentation Specialist focused on maintaining clear, concise, and comprehensive documentation for all project phases. His meticulous approach ensures that every detail is recorded, contributing to efficient project management and knowledge transfer.</p>
+            <ul class="info-list">
+                <li><strong>Location:</strong> New York, USA</li>
+                <li><strong>Joined:</strong> January 2023</li>
+                <li><strong>Role:</strong> Documentation Specialist</li>
+            </ul>
+            <!-- Modal -->
+            <div id="infoModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div id="documentViewer">
+                        <iframe id="documentFrame" src="" style="width: 100%; height: 500px; border: none; margin-bottom: 10px;"></iframe>
+                        <a id="downloadLink" href="" download class="download-link" style="color: cyan;">Download Document</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button to Open Modal -->
+            <button class="open-modal">View Resume</button>
+
+        
+            <!-- Display Average Rating -->
+            <div class="average-rating">
+                <h4>Average Rating</h4>
+                <div id="ratingDisplay">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star-half">&#9733;</span>
+                </div>
+                <span id="ratingValue"></span>/5
+            </div>
+        
+            <!-- Add Review Form -->
+            <section class="add-feedback">
+                <h4>Add a Review</h4>
+                <input type="text" id="reviewTitle" placeholder="Review Title" />
+                <textarea id="reviewContent" placeholder="Review Content"></textarea>
+        
+                <!-- Star Rating Section -->
+                <div class="star-rating">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+        
+                <button id="addReviewBtn">Add Review</button>
+            </section>
+        </aside>
+        
+        <main class="feed">
+            <h3>John Gerardo's Feed</h3>
+        
+            <!-- Add New Post Section at the Top -->
+            <section class="add-post">
+                <h4>Add New Post</h4>
+                <input type="text" id="postTitle" placeholder="Post Title" />
+                <textarea id="postContent" placeholder="Post Content"></textarea>
+                <button id="addPostBtn">Add Post</button>
+            </section>
+        
+            <!-- Feed Items Section -->
+            <div class="feed-items">
+                <section class="feed-item">
+                    <h4>Project Documentation Update</h4>
+                    <p>Completed detailed documentation for the new feature rollout. This will ensure the team has all necessary insights and reference material.</p>
+                    <span class="date">Posted on: October 5, 2024</span>
+                </section>
+                <section class="feed-item">
+                    <h4>Attended Tech Conference 2024</h4>
+                    <p>Gathered valuable knowledge at Tech Conference 2024 on effective documentation practices and tools for enhanced collaboration.</p>
+                    <span class="date">Posted on: September 20, 2024</span>
+                </section>
+                <section class="feed-item">
+                    <h4>New Project Documentation Framework</h4>
+                    <p>Introduced a new documentation framework to improve clarity and accessibility for future project references.</p>
+                    <span class="date">Posted on: August 15, 2024</span>
+                </section>
+                <section class="feed-item">
+                    <h4>Hosted Documentation Workshop</h4>
+                    <p>Led a team workshop on effective documentation practices, covering key techniques for writing clear and maintainable documentation.</p>
+                    <span class="date">Posted on: July 28, 2024</span>
+                </section>
+            </div>
+        </main>
+        
+        <!-- Right Sidebar: Reviews Section -->
+        <aside class="review-section">
+            <h3>User Reviews</h3>
+            <div class="review-items">
+                <!-- Initial Reviews -->
+                <div class="review-item">
+                    <h4>Highly Organized</h4>
+                    <p>John’s documentation is incredibly organized and easy to follow. It has helped the entire team stay on the same page.</p>
+                    <div class="star-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star-half">&#9733;</span>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <h4>Clear and Thorough</h4>
+                    <p>John’s documentation style is clear and thorough. He leaves no stone unturned, making it easy for others to pick up where he left off.</p>
+                    <div class="star-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star-empty">&#9733;</span>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <h4>Dependable and Detailed</h4>
+                    <p>John consistently provides reliable and detailed documentation that improves our project’s workflow.</p>
+                    <div class="star-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star-half">&#9733;</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+
+</body>
+</html>

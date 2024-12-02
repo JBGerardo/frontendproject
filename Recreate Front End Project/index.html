@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Profile</title>
+ 
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="CSS/main.css">
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- External JavaScript file -->
+    <script src="JS\main.js" defer></script>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Background Section -->
+        <div class="background"></div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <!-- Hero Image -->
+            <img src="Image Index/Computer background.PNG" alt="Cartoon computer setup" class="hero-image">
+
+            <!-- Text Content -->
+            <div class="text-content">
+                <h1>Welcome to Our Team</h1>
+                <h2>Innovative Solutions in <span class="highlight">Web Development</span></h2>
+
+                <!-- Menu Toggle Button (visible on smaller screens) -->
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    ☰
+                </button>
+
+                <!-- Navigation Menu -->
+                <nav id="main-nav" class="navigation">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html" class="about-link">About</a></li>
+
+                        <!-- Dropdown Menu for Team Members -->
+                        <li class="dropdown">
+                            <a href="#team" class="dropdown-toggle">Team Members</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="FirstProfile.html">John Carlo Sinoy - Coder</a></li>
+                                <li><a href="SecondProfile.html">Justin Mangawang - Documentation Specialist</a></li>
+                                <li><a href="ThirdProfile.html">John Gerardo - Tester</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="Project.html">Projects</a></li>
+                        <li><a href="contacts.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

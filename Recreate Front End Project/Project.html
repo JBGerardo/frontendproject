@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="CSS\ProfileMember.css">
+    <script src="JS\FirstMember.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section with Logo and Navigation Links -->
+    <header>
+        <div class="logo">
+            <img src="Image Index\Computer background.PNG" alt="Team Logo">
+            <h1>Our <span class="highlight" style="color: cyan;">Team</span></h1>
+        </div>
+    
+        <!-- Menu Toggle Button -->
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+    
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <div class="nav-dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" ">Team Members</a>
+                <div class="dropdown-content">
+                    <a href="FirstProfile.html" class="active">John Carlo Sinoy - Coder</a>
+                    <a href="SecondProfile.html">Justin Mangawang - Documentation Specialist</a>
+                    <a href="ThirdProfile.html">John Gerardo - Tester</a>
+                </div>
+            </div>
+            <a href="Project.html" style="color: cyan;">Projects</a>
+            <a href="contacts.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="profile-page">
+        <!-- Left Sidebar: Profile Details -->
+        <aside class="profile-details">
+            <img src="Image Profile\profile1.webp" alt="Profile Picture" class="profile-pic">
+            <h2>OUR TEAM</h2>
+            <p>
+                Our mission is to deliver innovative and effective solutions that drive success for 
+                our clients. We are dedicated to creating a collaborative environment where ideas 
+                            flourish and meaningful impacts are made.
+            </p>
+
+            <button class="open-modal" style="display: none;">More Info</button>
+        
+            <!-- Display Average Rating -->
+            <div class="average-rating">
+                <h4>Average Rating</h4>
+                <div id="ratingDisplay">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star-empty">&#9733;</span>
+                </div>
+                <span id="ratingValue">4.0</span>/5
+            </div>
+        
+            <!-- Add Review Form -->
+            <section class="add-feedback">
+                <h4>Add a Review</h4>
+                <input type="text" id="reviewTitle" placeholder="Review Title" />
+                <textarea id="reviewContent" placeholder="Review Content"></textarea>
+        
+                <!-- Star Rating Section -->
+                <div class="star-rating">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+        
+                <button id="addReviewBtn">Add Review</button>
+            </section>
+        </aside>
+        
+        <main class="feed">
+            <h3>Our Team Feed</h3>
+        
+            <!-- Add New Post Section at the Top -->
+            <section class="add-post">
+                <h4>Add New Post</h4>
+                <input type="text" id="postTitle" placeholder="Post Title" />
+                <textarea id="postContent" placeholder="Post Content"></textarea>
+                <section class="upload-box">
+                    <h3>Upload a File</h3>
+                    <input type="file" id="fileInput">
+                </section>
+                <button id="addPostBtn">Add Post</button>
+            </section>
+            
+        
+            <!-- Feed Items Section -->
+            <div class="feed-items">
+                <section class="feed-item">
+                    <h4>Team Project Update: Exciting New Features!</h4>
+                    <p>
+                        We’re thrilled to announce the latest progress in our team project! This update introduces several innovative features 
+                        designed to enhance user experience and improve performance. Stay tuned for the official launch details!
+                    </p>
+                    <span class="date">Posted on: October 5, 2024</span>
+                    <img src="Image Index\Computer background.PNG" alt="New Features" style="max-width: 100%; height: auto;">
+                </section>
+                <section class="feed-item">
+                    <h4>Highlights from Tech Conference 2024</h4>
+                    
+                    <p>
+                        Our team attended the Tech Conference 2024 and gained valuable insights into the latest industry trends. 
+                        We had an incredible opportunity to network with experts and exchange ideas to further our project development.
+                    </p>
+                    <span class="date">Posted on: September 20, 2024</span>
+                    <img src="Image Index\Computer background.PNG" alt="Tech Conference 2024 Highlights" style="max-width: 100%; height: auto;">             
+                </section>
+            </div>
+        </main>
+        
+        <!-- Right Sidebar: Reviews Section -->
+        <aside class="review-section">
+            <h3>Client Testimonials</h3>
+            <div class="review-items">
+                <!-- Client Feedback -->
+                <div class="review-item">
+                    <h4>Impressive Attention to Detail</h4>
+                    <p>The team consistently exceeded our expectations by delivering a high-quality project with remarkable attention to detail. Their dedication to refining every aspect of the work truly set them apart.</p>
+                    <div class="star-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <h4>Highly Professional and Reliable</h4>
+                    <p>Working with this team was a seamless experience. They maintained open communication, met every deadline, and delivered exceptional results. Their professionalism is unmatched.</p>
+                    <div class="star-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <h4>Outstanding Expertise and Collaboration</h4>
+                    <p>The team brought innovative solutions to our project and was always open to feedback. Their technical expertise and collaborative approach made them a pleasure to work with.</p>
+                    <div class="star-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star-empty">&#9733;</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+</body>
+</html>
